@@ -3,10 +3,19 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 require("dotenv").config();
 var app = express();
+
+mongoose
+  .connect("m.mongodb.net/likeCommentDB?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connexion à MongoDB réussie !"))
+  .catch(() => console.log("Connexion à MongoDB échouée !"));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

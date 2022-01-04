@@ -1,0 +1,20 @@
+const etudiant_model = require("../../models/etudiant_model");
+
+exports.signup = async (req, res, next) => {
+  try {
+    console.log(req.body);
+    const etudiant = await etudiant_model.create({
+      nom: req.body.username,
+      prenom: req.body.firstname,
+      email: req.body.lastname,
+      pays: req.body.email,
+      telephone: hash,
+      classe: req.body.email,
+      domaineCours: req.body.email,
+    });
+
+    res.redirect("/");
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+};
