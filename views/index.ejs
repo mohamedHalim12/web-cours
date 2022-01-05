@@ -227,13 +227,14 @@
               </div>
             </div>
           </div>
-          <form action="" method="post" class="section3-content-form">
+          <form action="/" method="post" class="section3-content-form">
             <div class="form-floating">
               <input
                 type="text"
                 class="form-control"
                 id="floatingInputFirstName"
                 placeholder="Nom"
+                name="nom"
                 required
               />
               <label for="floatingInputFirstName">Nom</label>
@@ -245,6 +246,7 @@
                 id="floatingInputLastName"
                 placeholder="Prenom"
                 required
+                name="prenom"
               />
               <label for="floatingInputLastName">Prenom</label>
             </div>
@@ -254,6 +256,7 @@
                 class="form-control"
                 id="floatingInputEmail"
                 placeholder="name@example.com"
+                name="email"
                 required
               />
               <label for="floatingInputEmail">Email address</label>
@@ -264,6 +267,7 @@
                 class="form-control"
                 id="floatingInputContry"
                 placeholder="Pays"
+                name="pays"
                 required
               />
               <label for="floatingInputContry">Pays</label>
@@ -274,8 +278,27 @@
                 class="form-control"
                 id="floatingInputPhone"
                 placeholder="Telephone"
+                name="telephone"
               />
               <label for="floatingInputPhone">Telephone</label>
+            </div>
+            <div class="form-floating">
+              <select
+                class="form-select"
+                id="floatingSelect"
+                name="contactBy"
+                required
+                aria-label="Floating label select example"
+              >
+                <option value="email" selected>Par Email</option>
+                <option value="Telephone">Par Telephone</option>
+                <option value="Message">Par Message</option>
+                <option value="whatsaps">Par WhatsApp</option>
+              </select>
+              <label for="floatingSelect"
+                >Comment Vous contactez ?? (choisisser ce qui vous
+                conviendrais)</label
+              >
             </div>
             <div class="form-floating">
               <input
@@ -283,6 +306,7 @@
                 class="form-control"
                 id="floatingInputClasse"
                 placeholder="Classe"
+                name="classe"
                 required
               />
               <label for="floatingInputClasse">Classe</label>
@@ -293,9 +317,12 @@
                 placeholder="Domaine des cours : example racine carrée, équation, etc..."
                 id="floatingTextarea2"
                 style="height: 100px"
+                name="domaine"
                 required
               ></textarea>
-              <label for="floatingTextarea2">Domaine des cours</label>
+              <label for="floatingTextarea2"
+                >Ce que vous voudrier étudier :</label
+              >
             </div>
             <div class="col-12">
               <button class="btn btn-primary" type="submit">Envoyer</button>

@@ -10,10 +10,13 @@ require("dotenv").config();
 var app = express();
 
 mongoose
-  .connect("m.mongodb.net/likeCommentDB?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASS}@cluster0.bqbzj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  )
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"));
 
