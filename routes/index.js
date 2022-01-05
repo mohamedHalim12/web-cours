@@ -26,7 +26,7 @@ router.post("/", function (req, res, next) {
     from: "mohamedhalim.cours@gmail.com",
     to: req.body.email,
     subject: "Cours de soutient | Mohamed Halim",
-    html: "<h1> Merci pour votre enregistrement</h1> <>Nous vous recontacterons dans les prochaines 48 heures afin de programmer un cours de soutien dans les plus brefs délais. Merci pour votre accompagnement.",
+    html: "<h1> Merci pour votre enregistrement</h1> Nous vous recontacterons dans les prochaines 48 heures afin de programmer un cours de soutien dans les plus brefs délais. Merci pour votre accompagnement.",
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
@@ -83,11 +83,11 @@ router.post("/", function (req, res, next) {
   })();
   // sendEmail().catch(console.error);
   console.log("vous etes passez ici");
-  res
-    .status(200)
-    .send(
-      "Merci pour votre enregistrement. Un message est envoyez directement a votre email, en attendant de programmer la première scéances. Vous pouvez fermer cette page.",
-    );
+  res.render("thanks", {
+    title: "Cours de Soutient | Mohamed Halim",
+    nom: req.body.nom,
+    prenom: req.body.prenom.toUpperCase(),
+  });
 });
 
 module.exports = router;

@@ -10,6 +10,10 @@ const etudiantShema = mongoose.Schema({
   contactBy: { type: String },
   classe: { type: String },
   domaineCours: { type: String },
+  dateEnregistrement: {
+    type: Date,
+    default: Date.now,
+  },
 });
 // etudiantShema.plugin(uniqueValidator);
 module.exports = mongoose.model("etudiant_model", etudiantShema);
