@@ -26,7 +26,7 @@
         <div class="section1-content">
           <div class="section1-header">
             <h1 class="section1-header-title"
-              >Cours de soutien Scolaire en ligne</h1
+              >Cours de soutien de mathématiques en ligne</h1
             >
             <div class="card">
               <div class="card-body">
@@ -111,7 +111,7 @@
                   <div class="section2-part2-information">
                     <div class="section2-part2-information-year"> 2021 </div>
                     <div class="section2-part2-information-scolarship">
-                      MAuxiliaire de Mathématiques a l’UQAR, Rimouski, Canada
+                      Auxiliaire de Mathématiques a l’UQAR, Rimouski, Canada
                       Enseigne le Calcul Différentiel aux étudiants de première
                       année universitaire.
                     </div>
@@ -203,15 +203,11 @@
           <div class="section3-content-information">
             <div class="card-group">
               <div class="card">
-                <img
-                  src="/images/freePayement.svg"
-                  class="card-img-top"
-                  alt="..."
-                />
+                <img src="/images/img01.jpg" class="card-img-top" alt="..." />
                 <div class="card-body" id="card-bodyID">
-                  <h5 class="card-title">30 min Gratuit</h5>
+                  <h5 class="card-title">20 min Gratuit</h5>
                   <p class="card-text"
-                    >Les premières 30 min des cours sont gratuit. Ils vous
+                    >Les premières 20 min des cours sont gratuit. Ils vous
                     aident à avoir un aperçue de la qualité de celui-ci.</p
                   >
                   <p class="card-text"
@@ -230,7 +226,25 @@
               </div>
             </div>
           </div>
+          <p class="merci-form"
+            >Merci de remplir le formulaire.
+            <i class="fas fa-level-down-alt"></i
+          ></p>
+
           <form action="/" method="post" class="section3-content-form">
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputNameFamily"
+                placeholder="Nom du tuteur"
+                name="nomTuteur"
+                required
+              />
+              <label for="floatingInputNameFamily"
+                >Nom et prénom du tuteur</label
+              >
+            </div>
             <div class="form-floating">
               <input
                 type="text"
@@ -240,7 +254,7 @@
                 name="nom"
                 required
               />
-              <label for="floatingInputFirstName">Nom</label>
+              <label for="floatingInputFirstName">Nom de l'élève</label>
             </div>
             <div class="form-floating">
               <input
@@ -251,7 +265,7 @@
                 required
                 name="prenom"
               />
-              <label for="floatingInputLastName">Prenom</label>
+              <label for="floatingInputLastName">Prenom de l'élève</label>
             </div>
             <div class="form-floating">
               <input
@@ -262,7 +276,7 @@
                 name="email"
                 required
               />
-              <label for="floatingInputEmail">Email address</label>
+              <label for="floatingInputEmail">Addresse Email</label>
             </div>
             <div class="form-floating">
               <input
@@ -294,14 +308,9 @@
                 aria-label="Floating label select example"
               >
                 <option value="email" selected>Par Email</option>
-                <option value="Telephone">Par Telephone</option>
-                <option value="Message">Par Message</option>
                 <option value="whatsaps">Par WhatsApp</option>
               </select>
-              <label for="floatingSelect"
-                >Comment Vous contactez ?? (choisisser ce qui vous
-                conviendrais)</label
-              >
+              <label for="floatingSelect">Comment Vous contactez ??</label>
             </div>
             <div class="form-floating">
               <input
@@ -312,7 +321,7 @@
                 name="classe"
                 required
               />
-              <label for="floatingInputClasse">Classe</label>
+              <label for="floatingInputClasse">Classe de l'enfant'</label>
             </div>
             <div class="form-floating">
               <textarea
@@ -324,13 +333,22 @@
                 required
               ></textarea>
               <label for="floatingTextarea2"
-                >Ce que vous voudrier étudier :</label
+                >Ce que vous voudriez étudier (exemple : les
+                équations...)</label
               >
             </div>
             <div class="col-12">
               <button class="btn btn-primary" type="submit">Envoyer</button>
             </div>
           </form>
+          <div class="card">
+            <div class="card-body">
+              Pour toutes autre informations, contactez nous par email :
+              <a href="mailto:mohamedhalim.cours@gmail.com"
+                >mohamedhalim.cours@gmail.com</a
+              >
+            </div>
+          </div>
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"

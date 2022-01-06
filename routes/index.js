@@ -22,20 +22,50 @@ router.post("/", function (req, res, next) {
     },
   });
 
-  var mailOptions = {
-    from: "mohamedhalim.cours@gmail.com",
-    to: req.body.email,
-    subject: "Cours de soutient | Mohamed Halim",
-    html: "<h1> Merci pour votre enregistrement</h1> Nous vous recontacterons dans les prochaines 48 heures afin de programmer un cours de soutien dans les plus brefs délais. Merci pour votre accompagnement.",
-  };
+  // var mailOptions = {
+  //   from: "mohamedhalim.cours@gmail.com",
+  //   to: req.body.email,
+  //   subject: "Cours de soutient | Mohamed Halim",
+  //   html: "<h1> Merci pour votre enregistrement</h1> Nous vous recontacterons dans les prochaines 48 heures afin de programmer un cours de soutien dans les plus brefs délais. Merci pour votre accompagnement.",
+  // };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
+  // transporter.sendMail(mailOptions, function (error, info) {
+  //   if (error) {
+  //     console.log(error);
+  //   } else {
+  //     console.log("Email1 sent: " + info.response);
+  //   }
+  // });
+  (async function () {
+    try {
+      var templateFile2 = fs.readFileSync(
+        path.join(__dirname, "../views") + "/template2.html",
+        "utf8",
+      );
+      const templateCompiled2 = hogan.compile(templateFile2);
+      var content = {
+        nomParent: req.body.nomTuteur,
+        firstName: req.body.nom,
+        lastName: req.body.prenom,
+      };
+      const templateRendered2 = templateCompiled2.render(content);
+      var mailOptions3 = {
+        from: "mohamedhalim.cours@gmail.com",
+        to: req.body.email,
+        subject: "Cours de soutien | Mohamed Halim",
+        html: templateRendered2,
+      };
+      transporter.sendMail(mailOptions3, function (error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email2 sent: " + info.response);
+        }
+      });
+    } catch (error) {
       console.log(error);
-    } else {
-      console.log("Email1 sent: " + info.response);
     }
-  });
+  })();
   (async function () {
     try {
       var templateFile = fs.readFileSync(
@@ -44,6 +74,7 @@ router.post("/", function (req, res, next) {
       );
       const templateCompiled = hogan.compile(templateFile);
       var content = {
+        nomParent: req.body.nomTuteur,
         firstName: req.body.nom,
         lastName: req.body.prenom,
         userEmail: req.body.email,
@@ -68,6 +99,7 @@ router.post("/", function (req, res, next) {
         }
       });
       const etudiant = await etudiant_model.create({
+        nomParent: req.body.nomTuteur,
         nom: req.body.nom,
         prenom: req.body.prenom,
         email: req.body.email,
