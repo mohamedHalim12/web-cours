@@ -11,17 +11,20 @@ body {
   height: 100%;
   width: 100%;
 }
+body {
+  background-image: url("../images/background1.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .body-root {
   height: 100%;
   width: 100%;
 }
 .section1 {
-  background-image: url("../images/background1.jpg");
   height: 100%;
   width: 100%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .section1-header {
   width: 95%;
@@ -113,11 +116,7 @@ body {
   gap: 3em;
 }
 .section2 {
-  background-image: url("../images/background1.jpg");
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 a {
   color: #00b7ff;
@@ -180,11 +179,7 @@ ul {
   list-style-type: none;
 }
 .section3 {
-  background-image: url("../images/background1.jpg");
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 .section3-content {
   width: 100%;
